@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Décompression ZIP et affichage dans iframe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+</head>
+<body>
+    <h1>Décompression d'un ZIP et affichage dans une iframe</h1>
+    <p>Le contenu de l'iframe sera chargé après décompression du fichier ZIP :</p>
+    <iframe id="iframe-content" width="100%" height="600px"></iframe>
+
+    <script>
+        // URL du fichier ZIP hébergé sur GitHub
+        const zipUrl = 'https://github.com/Eaielectronic/Electronixstockage/raw/refs/heads/main/index.zip';
+
+        // Fonction pour télécharger le fichier ZIP
+        function fetchZip(url) {
+            return fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Le téléchargement a échoué');
+                    return response.arrayBuffer(); // On récupère le ZIP sous forme de buffer
+                });
+        }
+
+        // Fonction pour décompresser et extraire le contenu du ZIP
+        function extractZipContent(arrayBuffer) {
+            const zip = new JSZip();
+            return zip.loadAsync(arrayBuffer).then((unzipped) => {
+                // Trouver le fichier HTML dans le ZIP (ici on suppose que c'est index.html)
+                const htmlFile = unzipped.file('index.html');
+                if (htmlFile) {
+                    return htmlFile.async('string'); // Lire le contenu du fichier HTML
+                } else {
+                    throw new Error('Fichier HTML introuvable dans le ZIP');
+                }
+            });
+        }
+
+        // Fonction pour afficher le contenu HTML dans l'iframe
+        function displayInIframe(htmlContent) {
+            const iframe = document.getElementById('iframe-content');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(htmlContent); // On injecte le contenu HTML dans l'iframe
+            iframeDoc.close();
+        }
+
+        // Logique principale : télécharger, décompresser et afficher
+        fetchZip(zipUrl)
+            .then(extractZipContent)
+            .then(displayInIframe)
+            .catch(error => console.error('Erreur :', error));
+
+    </script>
+</body>
+</html>

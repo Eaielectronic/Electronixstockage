@@ -40,14 +40,15 @@
         <p>En téléchargeant ou en utilisant l'application SnakeReader, vous acceptez les présentes conditions.</p>
 
         <h2>1. Confidentialité et données</h2>
-        <p>SnakeReader fonctionne entièrement hors-ligne. Aucune donnée, image, texte ou fichier audio ne quitte votre appareil ou n'est transmis à des tiers.</p>
+        <p>SnakeReader fonctionne entièrement en local sur votre appareil. L'application ne possède aucun serveur distant : aucune donnée, image, texte ou fichier audio ne quitte votre équipement ni n'est transmis à des tiers.</p>
+        <p>Les fonctionnalités de reconnaissance de texte (OCR) et de synthèse vocale exploitent les services intégrés au système d'exploitation de votre appareil (Android, iOS, macOS, Windows, Linux). Les traitements sont exécutés directement sur le matériel de l'utilisateur.</p>
         <p>Les images scannées en mode rapide sont automatiquement supprimées à la fermeture de la session. Les livres enregistrés dans la bibliothèque sont conservés uniquement sur le stockage local de votre appareil.</p>
 
         <h2>2. Responsabilité de l'utilisateur</h2>
         <p>L'application est destinée à un usage éducatif et personnel. L'utilisateur est seul responsable des documents qu'il numérise et doit s'assurer de respecter les droits d'auteur en vigueur.</p>
 
         <h2>3. Fonctionnement technique</h2>
-        <p>La précision de la reconnaissance de texte (OCR) et du traitement phonétique dépend de la qualité des images fournies (éclairage, netteté). SnakeReader est un outil d'aide à la lecture et ne remplace pas un suivi orthophonique professionnel.</p>
+        <p>La précision de la reconnaissance de texte (OCR) et du traitement phonétique dépend de la qualité des images fournies (éclairage, netteté) ainsi que des moteurs natifs du système d'exploitation. SnakeReader est un outil d'aide à la lecture et ne remplace pas un suivi orthophonique professionnel.</p>
 
         <h2>4. Propriété intellectuelle</h2>
         <p>L'application, son code source et ses fonctionnalités sont la propriété exclusive de ses développeurs (Gouchasse). Toute reproduction ou modification non autorisée est interdite.</p>
@@ -59,8 +60,8 @@
 
         <h2>Caractéristiques principales</h2>
         <ul>
-            <li><strong>Traitement local :</strong> Fonctionne sans connexion Internet grâce à un moteur natif en Rust.</li>
-            <li><strong>Protection des données :</strong> Aucune collecte d'informations personnelles.</li>
+            <li><strong>Traitement local :</strong> Fonctionne sans connexion Internet grâce au moteur natif Rust et aux composants système embarqués.</li>
+            <li><strong>Protection des données :</strong> Aucune collecte d'informations ni serveur distant.</li>
             <li><strong>Gestion du stockage :</strong> Nettoyage automatique des fichiers temporaires.</li>
             <li><strong>Format d'exportation :</strong> Sauvegarde et partage de livres via le format .sneakr.</li>
         </ul>
@@ -87,8 +88,8 @@
                     <td>Découpage en syllabes, mise en évidence des phonèmes complexes et grisaillage des lettres muettes.</td>
                 </tr>
                 <tr>
-                    <td><strong>Audio</strong></td>
-                    <td>Synthèse vocale synchronisée mot à mot avec réglage de la vitesse de lecture.</td>
+                    <td><strong>Audio & Synthèse</strong></td>
+                    <td>Lecture synchronisée mot à mot basée sur le moteur vocal du système, avec vitesse ajustable.</td>
                 </tr>
                 <tr>
                     <td><strong>Langues</strong></td>
@@ -99,9 +100,9 @@
 
         <h2>Spécifications techniques</h2>
         <ul>
-            <li><strong>Technologies :</strong> Flutter, Rust, SQLite.</li>
-            <li><strong>Moteurs OCR :</strong> Google ML Kit (Android/iOS), Apple Vision (macOS).</li>
-            <li><strong>Plateformes :</strong> Android, iOS, macOS, Windows, Linux.</li>
+            <li><strong>Architecture :</strong> Interface Flutter, moteur linguistique Rust, base SQLite locale.</li>
+            <li><strong>Services système exploités :</strong> Moteurs OCR intégrés au système (ex. Google ML Kit / Apple Vision) et synthèse vocale (TTS) native du système.</li>
+            <li><strong>Compatibilité :</strong> Android, iOS, macOS, Windows, Linux.</li>
         </ul>
     </section>
 

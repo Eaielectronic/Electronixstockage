@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeReader — Manuel & CGU</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1 { border-bottom: 2px solid #222; padding-bottom: 10px; margin-top: 40px; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
+        h3 { margin-top: 20px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background-color: #f4f4f4; }
+        ul { padding-left: 20px; }
+        .tagline { font-weight: bold; color: #444; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <section id="cgu">
+        <h1>Conditions Générales d'Utilisation</h1>
+        <p><strong>Dernière mise à jour :</strong> 2026</p>
+        <p>En téléchargeant ou en utilisant l'application SnakeReader, vous acceptez les présentes conditions.</p>
+
+        <h2>1. Confidentialité et données</h2>
+        <p>SnakeReader fonctionne entièrement hors-ligne. Aucune donnée, image, texte ou fichier audio ne quitte votre appareil ou n'est transmis à des tiers.</p>
+        <p>Les images scannées en mode rapide sont automatiquement supprimées à la fermeture de la session. Les livres enregistrés dans la bibliothèque sont conservés uniquement sur le stockage local de votre appareil.</p>
+
+        <h2>2. Responsabilité de l'utilisateur</h2>
+        <p>L'application est destinée à un usage éducatif et personnel. L'utilisateur est seul responsable des documents qu'il numérise et doit s'assurer de respecter les droits d'auteur en vigueur.</p>
+
+        <h2>3. Fonctionnement technique</h2>
+        <p>La précision de la reconnaissance de texte (OCR) et du traitement phonétique dépend de la qualité des images fournies (éclairage, netteté). SnakeReader est un outil d'aide à la lecture et ne remplace pas un suivi orthophonique professionnel.</p>
+
+        <h2>4. Propriété intellectuelle</h2>
+        <p>L'application, son code source et ses fonctionnalités sont la propriété exclusive de ses développeurs (Gouchasse). Toute reproduction ou modification non autorisée est interdite.</p>
+    </section>
+
+    <section id="presentation">
+        <h1>Présentation de SnakeReader</h1>
+        <p class="tagline">Application d'aide à la lecture interactive, phonétique et 100% hors-ligne.</p>
+
+        <h2>Caractéristiques principales</h2>
+        <ul>
+            <li><strong>Traitement local :</strong> Fonctionne sans connexion Internet grâce à un moteur natif en Rust.</li>
+            <li><strong>Protection des données :</strong> Aucune collecte d'informations personnelles.</li>
+            <li><strong>Gestion du stockage :</strong> Nettoyage automatique des fichiers temporaires.</li>
+            <li><strong>Format d'exportation :</strong> Sauvegarde et partage de livres via le format .sneakr.</li>
+        </ul>
+
+        <h2>Résumé des fonctionnalités</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Capture</strong></td>
+                    <td>Scan rapide à usage unique ou enregistrement dans une bibliothèque organisée par chapitres.</td>
+                </tr>
+                <tr>
+                    <td><strong>Affichage</strong></td>
+                    <td>Superposition sur la page d'origine ou mode texte épuré adapté aux personnes dyslexiques.</td>
+                </tr>
+                <tr>
+                    <td><strong>Outils pédagogiques</strong></td>
+                    <td>Découpage en syllabes, mise en évidence des phonèmes complexes et grisaillage des lettres muettes.</td>
+                </tr>
+                <tr>
+                    <td><strong>Audio</strong></td>
+                    <td>Synthèse vocale synchronisée mot à mot avec réglage de la vitesse de lecture.</td>
+                </tr>
+                <tr>
+                    <td><strong>Langues</strong></td>
+                    <td>Détection automatique, traduction de texte et transcription en Alphabet Phonétique International (API).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Spécifications techniques</h2>
+        <ul>
+            <li><strong>Technologies :</strong> Flutter, Rust, SQLite.</li>
+            <li><strong>Moteurs OCR :</strong> Google ML Kit (Android/iOS), Apple Vision (macOS).</li>
+            <li><strong>Plateformes :</strong> Android, iOS, macOS, Windows, Linux.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
